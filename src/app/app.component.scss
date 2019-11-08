@@ -1,0 +1,43 @@
+.app-header {
+    text-align: center;
+}
+
+ais-stats {
+    text-align: right;
+}
+
+#content-container {
+    display: flex;
+    margin-top: 20px;
+
+    #content-filters {
+        flex: 0 0 300px;
+
+        .filter-container {
+            margin-bottom: 20px;
+        }
+
+        .filter-header {
+            margin: 0 0 10px;
+        }
+    }
+}
+
+.topic-header {
+    margin-bottom: 5px;
+}
+
+.related-topics {
+    padding-top: 10px;
+}
+
+mat-card {
+    font-family: 'Share Tech Mono', monospace;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    #content-container {
+        flex-direction: column-reverse;
+    }
+}
