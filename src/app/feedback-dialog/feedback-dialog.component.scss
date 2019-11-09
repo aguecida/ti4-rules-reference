@@ -1,0 +1,15 @@
+* {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.actions {
+    justify-content: flex-end;
+}
+
+#feedback-input {
+    height: 150px;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    width: calc(100% - 22px);
+}

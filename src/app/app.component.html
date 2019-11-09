@@ -28,7 +28,7 @@
                     
                     <div *ngFor="let hit of hits" class="result-card">
                         <mat-card>
-                            <h2 class="topic-header">{{hit.topic}}</h2>
+                            <h2 class="topic-header">{{hit.topic}} <span *ngIf="hit.type" class="topic-type">({{hit.type}})</span></h2>
                             <p>{{hit.description}}</p>
                             <ul>
                                 <li *ngFor="let rule of hit.rules">{{rule}}</li>
@@ -58,6 +58,13 @@
                     </div>
                 </ng-template>
             </ais-hits>
+            <div id="pagination-container">
+                <ais-pagination></ais-pagination>
+            </div>
         </div>
     </div>
 </ais-instantsearch>
+
+<div id="feedback" (click)="openDialog()" matTooltip="Submit feedback" matTooltipPosition="right">
+    <mat-icon>record_voice_over</mat-icon>
+</div>

@@ -27,6 +27,11 @@ ais-stats {
     margin-bottom: 5px;
 }
 
+.topic-type {
+    color: #888;
+    font-size: 16px;
+}
+
 .related-topics {
     padding-top: 10px;
 }
@@ -34,6 +39,24 @@ ais-stats {
 mat-card {
     font-family: 'Share Tech Mono', monospace;
     margin-bottom: 10px;
+}
+
+#pagination-container {
+    margin: 10px 0;
+}
+
+#feedback {
+    color: #666;
+    cursor: pointer;
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 3px 0 #ccc;
+    z-index: 2;
 }
 
 @media screen and (max-width: 500px) {

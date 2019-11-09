@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Submit Feedback</h1>
+<div mat-dialog-content>
+    <textarea #input id="feedback-input" placeholder="Find any errors on this page or have a suggestion for an improvement?"></textarea>
+</div>
+<div class="actions" mat-dialog-actions>
+    <button mat-stroked-button mat-dialog-close disableRipple>Cancel</button>
+    <button (click)="submit(input.value)" mat-stroked-button disableRipple [disabled]="!input.value">Send</button>
+</div>
