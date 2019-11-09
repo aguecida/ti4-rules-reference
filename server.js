@@ -15,6 +15,7 @@ app.post('/submit-feedback', (req, res) => {
 
     db.collection('feedback').insertOne(document, (err, result) => {
         if (err) {
+            console.log(err);
             return res.status(500).send();
         }
 
