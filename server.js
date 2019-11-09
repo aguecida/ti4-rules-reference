@@ -28,7 +28,7 @@ mongo.connect(process.env.MONGO_DB, { useUnifiedTopology: true }, (err, client) 
         return console.error(err);
     }
 
-    db = client.db('ti4-rules-reference');
+    db = client.db();
 
     app.listen(port, () => {
         console.log(`Server listening on port ${port}`);
