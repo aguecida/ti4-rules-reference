@@ -34,7 +34,7 @@
                                 <li *ngFor="let rule of hit.rules">{{rule}}</li>
                             </ul>
                             <div *ngFor="let step of hit.steps">
-                                <div><strong>Step {{step.number}} - </strong>{{step.description}}</div>
+                                <div><strong>{{step.name}}: </strong>{{step.description}}</div>
                                 <ul>
                                     <li *ngFor="let rule of step.rules">{{rule}}</li>
                                 </ul>
@@ -43,7 +43,7 @@
                                 <h2 class="topic-header">{{subTopic.name}}</h2>
                                 <p>{{subTopic.description}}</p>
                                 <div *ngFor="let step of subTopic.steps">
-                                    <div><strong>Step {{step.number}} - </strong>{{step.description}}</div>
+                                    <div><strong>{{step.name}}: </strong>{{step.description}}</div>
                                     <ul>
                                         <li *ngFor="let rule of step.rules">{{rule}}</li>
                                     </ul>
