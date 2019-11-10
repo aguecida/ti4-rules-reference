@@ -16,10 +16,6 @@ export class FeedbackDialogComponent implements OnInit {
     }
 
     submit(input: string): void {
-        if (!input) {
-            return;
-        }
-
         this.service.submitFeedback(input).subscribe(() => {
             this.dialogRef.close({ sent: true });
         }, () => {
