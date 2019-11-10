@@ -33,7 +33,7 @@ export class AppComponent {
             }
 
             const statusMessage = result.sent ?
-                'Thanks! We\'ve received your feedback!' :
+                'Thanks for your feedback!' :
                 'Sorry, we were unable to submit your feedback at this time.';
 
             this.snackBar.open(statusMessage);
