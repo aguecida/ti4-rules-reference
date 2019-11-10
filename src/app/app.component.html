@@ -58,13 +58,11 @@
                     </div>
                 </ng-template>
             </ais-hits>
-            <div id="pagination-container">
-                <ais-pagination></ais-pagination>
-            </div>
         </div>
+    </div>
+    <div id="pagination-container">
+        <ais-pagination></ais-pagination>
     </div>
 </ais-instantsearch>
 
-<div id="feedback" (click)="openDialog()" matTooltip="Submit feedback" matTooltipPosition="right">
-    <mat-icon>record_voice_over</mat-icon>
-</div>
+<div id="report-button" (click)="openDialog()">Report an error</div>

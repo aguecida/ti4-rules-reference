@@ -45,18 +45,12 @@ mat-card {
     margin: 10px 0;
 }
 
-#feedback {
-    color: #666;
+#report-button {
     cursor: pointer;
-    position: fixed;
-    bottom: 12px;
-    left: 12px;
-    padding: 8px;
-    background-color: #fff;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 3px 0 #ccc;
-    z-index: 2;
+    margin: 20px 0;
+    text-align: center;
+    color: #777;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 500px) {
