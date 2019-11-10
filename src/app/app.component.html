@@ -42,6 +42,9 @@
                             <div *ngFor="let subTopic of hit.subTopics">
                                 <h2 class="topic-header">{{subTopic.name}}</h2>
                                 <p>{{subTopic.description}}</p>
+                                <ul>
+                                    <li *ngFor="let rule of subTopic.rules">{{rule}}</li>
+                                </ul>
                                 <div *ngFor="let step of subTopic.steps">
                                     <div><strong>{{step.name}}: </strong>{{step.description}}</div>
                                     <ul>
