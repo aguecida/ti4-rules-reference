@@ -23,12 +23,12 @@
                 <ng-template let-hits="hits" let-results="results">
                     <!-- Nothing found? -->
                     <div *ngIf="hits.length === 0">
-                        Nothing found for <strong>{{results.query}}</strong>.
+                        Nothing found for <strong>{{results.query}}</strong>
                     </div>
                     
                     <div *ngFor="let hit of hits" class="result-card">
                         <mat-card>
-                            <h2 class="topic-header">{{hit.topic}} <span *ngIf="hit.type" class="topic-type">({{hit.type}})</span></h2>
+                            <h2 class="topic-header topic-primary">{{hit.topic}} <span *ngIf="hit.type" class="topic-type">({{hit.type}})</span></h2>
                             <p>{{hit.description}}</p>
                             <ul>
                                 <li *ngFor="let rule of hit.rules">{{rule}}</li>
@@ -40,7 +40,7 @@
                                 </ul>
                             </div>
                             <div *ngFor="let subTopic of hit.subTopics">
-                                <h2 class="topic-header">{{subTopic.name}}</h2>
+                                <h3 class="topic-header">{{subTopic.name}}</h3>
                                 <p>{{subTopic.description}}</p>
                                 <ul>
                                     <li *ngFor="let rule of subTopic.rules">{{rule}}</li>
@@ -68,4 +68,6 @@
     </div>
 </ais-instantsearch>
 
-<div id="report-button" (click)="openDialog()">Report an error</div>
+<div id="report-button">
+    <span (click)="openDialog()">Report an error</span>
+</div>

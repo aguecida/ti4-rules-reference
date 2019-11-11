@@ -27,6 +27,10 @@ ais-stats {
     margin-bottom: 5px;
 }
 
+.topic-primary {
+    color: #0096db;
+}
+
 .topic-type {
     color: #888;
     font-size: 16px;
@@ -46,11 +50,14 @@ mat-card {
 }
 
 #report-button {
-    cursor: pointer;
     margin: 20px 0;
     text-align: center;
     color: #777;
     text-decoration: underline;
+
+    span {
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 500px) {
