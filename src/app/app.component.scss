@@ -23,15 +23,6 @@ ais-stats {
     }
 }
 
-.topic-header {
-    margin-bottom: 5px;
-}
-
-.topic-type {
-    color: #888;
-    font-size: 16px;
-}
-
 .related-topics {
     padding-top: 10px;
 }
@@ -43,6 +34,38 @@ mat-card {
 
 #pagination-container {
     margin: 10px 0;
+}
+
+.topic-header::ng-deep {
+    margin-bottom: 10px;
+
+    .ais-Highlight, .ais-Highlight-highlighted {
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+.subTopic-header::ng-deep {
+    margin-bottom: 10px;
+
+    .ais-Highlight, .ais-Highlight-highlighted {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+.topic-type {
+    color: #888;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.step-title::ng-deep {
+    font-weight: bold;
+
+    .ais-Highlight, .ais-Highlight-highlighted {
+        font-weight: bold;
+    }
 }
 
 #report-button {

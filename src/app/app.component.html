@@ -28,35 +28,93 @@
                     
                     <div *ngFor="let hit of hits" class="result-card">
                         <mat-card>
-                            <h2 class="topic-header">{{hit.topic}} <span *ngIf="hit.type" class="topic-type">({{hit.type}})</span></h2>
-                            <p>{{hit.description}}</p>
+
+                            <!-- Topic -->
+                            <div class="topic-header">
+                                <ais-highlight attribute="topic" [hit]="hit"></ais-highlight>
+                                <span *ngIf="hit.type" class="topic-type">({{hit.type}})</span>
+                            </div>
+
+                            <!-- Description -->
+                            <span>{{hit.description}}</span>
+
+                            <!-- Rules -->
                             <ul>
-                                <li *ngFor="let rule of hit.rules">{{rule}}</li>
+                                <li *ngFor="let rule of hit.rules; let i = index">
+                                    <ais-highlight attribute="rules[{{i}}]" [hit]="hit"></ais-highlight>
+                                </li>
                             </ul>
-                            <div *ngFor="let step of hit.steps">
-                                <div><strong>{{step.name}}: </strong>{{step.description}}</div>
+
+                            <!-- Steps -->
+                            <div *ngFor="let step of hit.steps; let i = index">
+                                
+                                <!-- Step Title -->
+                                <span class="step-title">
+                                    <ais-highlight attribute="steps[{{i}}].name" [hit]="hit"></ais-highlight>
+                                    <span>: </span>
+                                </span>
+
+                                <!-- Step Description -->
+                                <span>{{step.description}}</span>
+
+                                <!-- Step Rules -->
                                 <ul>
-                                    <li *ngFor="let rule of step.rules">{{rule}}</li>
+                                    <li *ngFor="let rule of step.rules; let j = index">
+                                        <ais-highlight attribute="steps[{{i}}].rules[{{j}}]" [hit]="hit"></ais-highlight>
+                                    </li>
                                 </ul>
+
                             </div>
-                            <div *ngFor="let subTopic of hit.subTopics">
-                                <h3 class="topic-header">{{subTopic.name}}</h3>
-                                <p>{{subTopic.description}}</p>
-                                <ul>
-                                    <li *ngFor="let rule of subTopic.rules">{{rule}}</li>
-                                </ul>
-                                <div *ngFor="let step of subTopic.steps">
-                                    <div><strong>{{step.name}}: </strong>{{step.description}}</div>
-                                    <ul>
-                                        <li *ngFor="let rule of step.rules">{{rule}}</li>
-                                    </ul>
+
+                            <!-- Subtopics -->
+                            <div *ngFor="let subTopic of hit.subTopics; let i = index">
+
+                                <!-- Subtopic Title -->
+                                <div class="subTopic-header">
+                                    <ais-highlight attribute="subTopics[{{i}}].name" [hit]="hit"></ais-highlight>
                                 </div>
+                                
+                                <!-- Subtopic Description -->
+                                <span>{{subTopic.description}}</span>
+
+                                <!-- Subtopic Rules -->
+                                <ul>
+                                    <li *ngFor="let rule of subTopic.rules; let j = index">
+                                        <ais-highlight attribute="subTopics[{{i}}].rules[{{j}}]" [hit]="hit"></ais-highlight>
+                                    </li>
+                                </ul>
+
+                                <!-- Subtopic Steps -->
+                                <div *ngFor="let step of subTopic.steps; let j = index">
+
+                                    <!-- Subtopic Step Title -->
+                                    <span class="step-title">
+                                        <ais-highlight attribute="subTopics[{{i}}].steps[{{j}}].name" [hit]="hit"></ais-highlight>
+                                        <span>: </span>
+                                    </span>
+    
+                                    <!-- Subtopic Step Description -->
+                                    <span>{{step.description}}</span>
+
+                                    <!-- Subtopic Step Rules -->
+                                    <ul>
+                                        <li *ngFor="let rule of step.rules; let k = index">
+                                            <ais-highlight attribute="subTopics[{{i}}].steps[{{j}}].rules[{{k}}]" [hit]="hit"></ais-highlight>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
                             </div>
+
                             <mat-divider></mat-divider>
+
+                            <!-- Related Topics -->
                             <div class="related-topics">
                                 <strong>Related Topics: </strong>
                                 <span>{{hit.relatedTopics | stringList}}</span>
                             </div>
+
                         </mat-card>
                     </div>
                 </ng-template>
