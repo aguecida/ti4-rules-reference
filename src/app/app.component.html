@@ -28,7 +28,7 @@
                     
                     <div *ngFor="let hit of hits" class="result-card">
                         <mat-card>
-                            <h2 class="topic-header topic-primary">{{hit.topic}} <span *ngIf="hit.type" class="topic-type">({{hit.type}})</span></h2>
+                            <h2 class="topic-header">{{hit.topic}} <span *ngIf="hit.type" class="topic-type">({{hit.type}})</span></h2>
                             <p>{{hit.description}}</p>
                             <ul>
                                 <li *ngFor="let rule of hit.rules">{{rule}}</li>
