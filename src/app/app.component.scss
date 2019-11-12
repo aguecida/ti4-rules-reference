@@ -11,7 +11,7 @@ ais-stats {
     margin-top: 20px;
 
     #content-filters {
-        flex: 0 0 300px;
+        flex: 0 0 275px;
 
         .filter-container {
             margin-bottom: 20px;
@@ -20,6 +20,10 @@ ais-stats {
         .filter-header {
             margin: 0 0 10px;
         }
+    }
+
+    #content-results {
+        flex: 1 1 auto;
     }
 }
 
@@ -58,6 +62,12 @@ mat-card {
     color: #888;
     font-size: 16px;
     margin-left: 5px;
+}
+
+.topic-image {
+    float: right;
+    margin: 0 0 10px 10px;
+    width: 85px;
 }
 
 .step-title::ng-deep {

@@ -29,6 +29,9 @@
                     <div *ngFor="let hit of hits" class="result-card">
                         <mat-card>
 
+                            <!-- Topic Image -->
+                            <img *ngIf="hit.image" class="topic-image" src="{{hit.image}}">
+
                             <!-- Topic -->
                             <div class="topic-header">
                                 <ais-highlight attribute="topic" [hit]="hit"></ais-highlight>
